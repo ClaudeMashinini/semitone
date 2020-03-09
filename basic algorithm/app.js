@@ -16,11 +16,21 @@ module.exports = class JamBuddy {
     ];
   }
   selectNotes() {
-    let output;
+    let output, firstNote, secondNote;
     firstNote = this.notes[Math.floor(Math.random() * this.notes.length)];
-    secondNote = this.notes[Math.floor(random(1, 12)) - 1];
+    secondNote = this.notes[Math.floor(Math.random() * (12 - 1) + 1) - 1];
 
     output = [firstNote, secondNote];
-    return output.sort();
+    this.final = output.sort();
+    return this.final;
+  }
+  checkAnswer(prod) {
+    if (
+      this.notes.indexOf(this.final[1]) - this.notes.indexOf(this.final[0]) ==
+      prod
+    ) {
+      return true;
+    }
+    return false;
   }
 };

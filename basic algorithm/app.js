@@ -18,7 +18,7 @@ module.exports = class JamBuddy {
   selectNotes() {
     let output;
     firstNote = this.notes[Math.floor(Math.random() * this.notes.length)];
-    secondNote = this.notes[Math.floor(random(1, 13)) - 1];
+    secondNote = this.notes[Math.floor(random(1, 12)) - 1];
 
     output = [firstNote, secondNote];
     return output.sort();

@@ -23,6 +23,7 @@ module.exports = class JamBuddy {
     output = [firstNote, secondNote];
     this.final = output.sort();
     return this.final;
+    document.getElementById("selector").innerHTML = this.final;
   }
   checkAnswer(prod) {
     if (

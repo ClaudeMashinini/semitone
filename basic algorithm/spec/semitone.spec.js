@@ -1,8 +1,8 @@
 const JamBuddy = require("../app");
 let buddy = new JamBuddy();
 
-describe("checking for the presence of a full note circle", function() {
-  it("should have 12 notes, in chronological order", function() {
+describe("checking for the presence of a full note circle", function () {
+  it("should have 12 notes, in chronological order", function () {
     expect(buddy.notes[0]).toBe("A");
     expect(buddy.notes[1]).toBe("A#");
     expect(buddy.notes[2]).toBe("B");
@@ -18,11 +18,15 @@ describe("checking for the presence of a full note circle", function() {
   });
 });
 
-describe("basic functionality", function() {
-  it("should be able to randomly pick two notes from the notes' array", function() {
+describe("basic functionality", function () {
+  it("should be able to randomly pick two notes from the notes' array", function () {
     expect(buddy.selectNotes().length).toBe(2);
   });
-  it("should be able to determine whether the predicted number of seminotes is true or not", function() {
-    expect(buddy.checkAnswer(3)).toBe(true || false);
+  it("should be able to determine whether the predicted number of seminotes is true or not", function () {
+    if (buddy.checkAnswer(2)) {
+      expect(buddy.checkAnswer).toBe(true);
+    } else {
+      expect(buddy.checkAnswer).toBe(false);
+    }
   });
 });

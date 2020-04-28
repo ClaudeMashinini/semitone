@@ -12,7 +12,7 @@ module.exports = class JamBuddy {
       "F",
       "F#",
       "G",
-      "G#"
+      "G#",
     ];
   }
   selectNotes() {
@@ -25,12 +25,10 @@ module.exports = class JamBuddy {
     return this.final;
   }
   checkAnswer(prod) {
-    if (
-      this.notes.indexOf(this.final[1]) - this.notes.indexOf(this.final[0]) ==
+    return this.notes.indexOf(this.final[1]) -
+      this.notes.indexOf(this.final[0]) ===
       prod
-    ) {
-      return true;
-    }
-    return false;
+      ? true
+      : false;
   }
 };

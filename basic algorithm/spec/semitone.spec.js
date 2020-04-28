@@ -24,9 +24,9 @@ describe("basic functionality", function () {
   });
   it("should be able to determine whether the predicted number of seminotes is true or not", function () {
     if (buddy.checkAnswer(2)) {
-      expect(buddy.checkAnswer).toBe(true);
+      expect(buddy.checkAnswer(2)).toBe(true);
     } else {
-      expect(buddy.checkAnswer).toBe(false);
+      expect(buddy.checkAnswer(2)).toBe(false);
     }
   });
 });
